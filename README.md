@@ -14,7 +14,6 @@ Este projeto implementa um protótipo de microserviços para uma companhia aére
 - `airports_service`: serviço de aeroportos (listagem e destinos)
 - `flights_service`: serviço de voos (listagem por data e pesquisa)
 - `purchase_service`: serviço de compras (reserva e emissão de tickets)
-- `k8s`: manifests Kubernetes (Deployments e Services)
 
 ## Banco de Dados
 
@@ -61,20 +60,6 @@ SELECT id, flight_number, origin_id, destination_id, price FROM flights;
 ```bash
 docker-compose up --build -d
 ```
-
-## Orquestração com Kubernetes
-
-- Aplique os manifests em `k8s/`:
-```bash
-kubectl apply -f k8s/
-```
-
-- Verifique pods e serviços
-```bash
-kubectl get pods,svc
-```
-
-As variáveis de ambiente apontam para o serviço de banco de dados externo.
 
 ## Explicação
 
