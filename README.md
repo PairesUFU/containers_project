@@ -2,10 +2,10 @@
 
 Este projeto implementa um protótipo de microserviços para uma companhia aérea de venda de passagens, conforme requisitos:
 
+- Ambiente linux através de wsl
 - Linguagem: Python (Flask)
 - Banco de dados: PostgreSQL (externo/not containerized)
 - Containerização: Docker (Ubuntu 20.04) para cada serviço
-- Orquestração: Kubernetes para ambiente de desenvolvimento/teste
 
 ## Estrutura do Projeto
 
@@ -34,7 +34,7 @@ createdb airlines
 
 - Entre no database e habilite a extensão `uuid-ossp` e execute `db/schema.sql` para criar as tabelas.
     - psql -h <host> -U <user> -d airlines -f db/schema.sql
-    - user: postgres, password: 1234
+    - exemplo: user postgres e password 1234
 ```bash
 psql -h localhost -U postgres -d airlines
 
