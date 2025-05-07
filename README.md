@@ -31,18 +31,16 @@ sudo -i -u postgres
 createdb airlines
 ```
 
-- Entre no database e habilite a extensão `uuid-ossp` e execute `db/schema.sql` para criar as tabelas.
+- Entre no database e execute `db/schema.sql` para criar as tabelas e ativar a extensão.
     - psql -h <host> -U <user> -d airlines -f db/schema.sql
     - exemplo: user postgres e password 1234
 ```bash
-psql -h localhost -U postgres -d airlines
-
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+psql -h localhost -U postgres -d airlines -f db/schema.sql
 ```
 
 - Em airlines, testar usando "\dt" para garantir que as tabelas foram criadas
 
-- Entre no database para checar tabelas
+- Entre no database para checar tabelas com os selects
     - psql -h localhost -U postgres -d airlines
 
 - Selects
