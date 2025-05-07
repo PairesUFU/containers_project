@@ -1,0 +1,61 @@
+
+services:
+  auth:
+    build: 
+      context: ./auth_service
+    image: auth-service:latest
+    ports:
+      - "5001:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_NAME: airlines
+      DB_USER: postgres
+      DB_PASS: "1234"
+      DB_PORT: "5432"
+
+  airports:
+    build: 
+      context: ./airports_service
+    image: airports-service:latest
+    ports:
+      - "5002:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_NAME: airlines
+      DB_USER: postgres
+      DB_PASS: "1234"
+      DB_PORT: "5432"
+
+  flights:
+    build: 
+      context: ./flights_service
+    image: flights-service:latest
+    ports:
+      - "5003:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_NAME: airlines
+      DB_USER: postgres
+      DB_PASS: "1234"
+      DB_PORT: "5432"
+
+  purchase:
+    build: 
+      context: ./purchase_service
+    image: purchase-service:latest
+    ports:
+      - "5004:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_NAME: airlines
+      DB_USER: postgres
+      DB_PASS: "1234"
+      DB_PORT: "5432"
